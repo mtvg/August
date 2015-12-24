@@ -1,0 +1,33 @@
+{
+  "name": "August",
+  "version": "1.0.0",
+  "description": "Control your August Lock with Amazon Echo or HTTPS requests",
+  "main": "august-server.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mtvg/August.git"
+  },
+  "keywords": [
+    "august",
+    "bluetooth",
+    "lock",
+    "alexa",
+    "amazon"
+  ],
+  "dependencies": {
+    "bluebird": ">=2.9.34",
+    "debug": ">=2.2.0",
+    "noble": "~0.2.0",
+    "underscore": ">=1.5.0"
+  },
+  "author": "Mathieu Vignau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mtvg/August/issues"
+  },
+  "homepage": "https://github.com/mtvg/August"
+}
