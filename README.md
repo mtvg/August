@@ -7,7 +7,7 @@ TODO: Fork *augustctl* to merge some features of this project, and use *augustct
 ## Info
 This NodeJS script creates a web server that controls an August Lock via Bluetooth LE.
 
-The server will respond to Alexa Skill requests.
+The server will respond to Alexa Skill requests. ([https://youtu.be/dMDONhdPdxo](https://youtu.be/dMDONhdPdxo))
 
 The server also respond to those actions:
 
@@ -79,6 +79,8 @@ The offline key is an encryption key used by the lock to communicate securely th
 This key is stored in the offical August app preferences on both iOS and Android.
 
 I'm only going to cover how to retreive the key using an iPhone and OSX, please read [this](https://github.com/sretlawd/augustctl#android-phone-with-root) for Android.
+
+In order for the August app to save the offline key to your preferences file, the AutoUnlock feature has to be activated at least once. (You can disable it right after) 
 
 - Create an **unencrypted** backup of your iOS device on your computer. (Uncheck "Encrypt iPhone backup" in iTunes)
 - Use [iPhone Backup Extractor](http://supercrazyawesome.com/) to extract the data of the app named ```com.august.iosapp``` ([more details here](http://adriansieber.com/how-to-extract-data-from-ios-apps-on-mac-os/), a Windows alternative probably exsists)
