@@ -94,12 +94,15 @@ With this method, no need to expose your webserver to the world. And the voice c
 
 You can say: "Alexa, open the *door*" or "Alexa, close the *door*" (*door* is the name of your virtual WeMo device, you can change it if you want)
 
+You can also say: "Alex, turn off autolock" and it will disable the autolock feature plus open the door, but re enabled it 3 hours later (`neverlock?relock=180`)
+
 For this, we're gonna use [fauxmo](https://github.com/makermusings/fauxmo)
 
 Download and install the python script to your RaspberryPi and edit the end of the file as this:
 
 	FAUXMOS = [
-    	['Door', rest_api_handler('http://127.0.0.1:8080/august/control/unlock', 'http://127.0.0.1:8080/august/control/lock')]
+    	['Door', rest_api_handler('http://127.0.0.1:8080/august/control/unlock', 'http://127.0.0.1:8080/august/control/lock')],
+    	['Autolock', rest_api_handler('http://127.0.0.1:8080/august/control/everlock', 'http://127.0.0.1:8080/august/control/neverlock?relock=180')],
 	]
 
 

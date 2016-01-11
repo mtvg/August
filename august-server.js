@@ -116,13 +116,15 @@ function httpHandler( request, response ){
 		execCommand('everlockOffUnlock');
 		if (get.query.relock)
 			relockTime = new Date().getTime() + parseInt(get.query.relock)*1000;
+		else
+			relockTime = 0;
 		cachedLockStatus = "unlocked"
 		cachedEverlockTime = 0
 		response.end('{"system":"neverlocking"}');
 	}
 	else
 	if (get.pathname == config.baseURL+'/everlock') {
-		execCommand('everlockOnLock', config.autolockTime);
+		execCommand('everlockOnLock', undefined, config.autolockTime);
 		relockTime = 0;
 		cachedLockStatus = "locked"
 		cachedEverlockTime = config.autolockTime
