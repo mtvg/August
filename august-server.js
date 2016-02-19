@@ -34,11 +34,6 @@ var relockTime = 0;
 var cachedLockStatus = "unknown"
 var cachedEverlockTime = -1
 
-var options = {
-  key: fs.readFileSync(config.sslKey),
-  cert: fs.readFileSync(config.sslCert)
-};
-
 function httpHandler( request, response ){
 
 	var get = url.parse(request.url, true);
@@ -145,6 +140,10 @@ function httpHandler( request, response ){
 	}
 }
 if (config.httpsServerPort) {
+	var options = {
+	  key: fs.readFileSync(config.sslKey),
+	  cert: fs.readFileSync(config.sslCert)
+	};
 	var serverssl = https.createServer(options, httpHandler)
 	serverssl.listen( config.httpsServerPort );
 }
