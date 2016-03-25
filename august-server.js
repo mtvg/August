@@ -155,7 +155,7 @@ if (config.httpServerPort) {
 
 setInterval(function(){
 	if (relockTime && relockTime < new Date().getTime()) {
-		execCommand('everlockOnLock', config.autolockTime);
+		execCommand('everlockOnLock', undefined, config.autolockTime);
 		cachedLockStatus = "locked";
 		cachedEverlockTime = config.autolockTime;
 		relockTime = 0;
